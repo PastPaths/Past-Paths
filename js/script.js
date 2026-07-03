@@ -1,29 +1,35 @@
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
-const nav = document.querySelector('[data-nav]');
+const siteNav = document.querySelector('[data-site-nav]');
 
-function updateHeader() {
-  if (window.scrollY > 40) header.classList.add('is-scrolled');
-  else header.classList.remove('is-scrolled');
+const setHeaderState = () => {
+  if (!header) return;
+  header.classList.toggle('is-scrolled', window.scrollY > 24);
+};
+
+setHeaderState();
+window.addEventListener('scroll', setHeaderState, { passive: true });
+
+if (menuToggle && siteNav && header) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    siteNav.classList.toggle('is-open', !isOpen);
+    header.classList.toggle('menu-open', !isOpen);
+  });
 }
 
-window.addEventListener('scroll', updateHeader, { passive: true });
-updateHeader();
-
-menuToggle?.addEventListener('click', () => {
-  const open = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!open));
-  nav.classList.toggle('is-open', !open);
-  header.classList.toggle('menu-open', !open);
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}

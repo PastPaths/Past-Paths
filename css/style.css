@@ -504,3 +504,105 @@ p { margin: 0 0 var(--space-md); }
     grid-template-columns: 1fr;
   }
 }
+
+/* Experiences page */
+.experiences-page-hero {
+  min-height: 46vh;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgba(36, 38, 29, .72), rgba(36, 38, 29, .58)),
+    url('../images/burgh-castle-hero.jpg') center/cover;
+  color: var(--cream-soft);
+}
+
+.experiences-page-hero .lead {
+  color: rgba(251, 248, 238, .88);
+}
+
+.experiences-page-section {
+  background: var(--cream-soft);
+}
+
+.experiences-page-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.experiences-page-header p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.experiences-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.experiences-page-card {
+  background: var(--white);
+  border: 1px solid rgba(70, 80, 31, .12);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(36, 38, 29, .09);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.experiences-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 70px rgba(36, 38, 29, .13);
+}
+
+.experiences-page-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.experiences-page-card-body {
+  padding: 1.5rem;
+}
+
+.experiences-page-card-body h3 {
+  margin-bottom: .75rem;
+}
+
+.experiences-page-card-body p:not(.small-heading) {
+  color: var(--muted);
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 1.25rem 0;
+}
+
+.experience-meta span {
+  border: 1px solid rgba(70, 80, 31, .18);
+  border-radius: 999px;
+  padding: .35rem .7rem;
+  font-size: .82rem;
+  color: var(--olive-dark);
+  background: var(--cream-soft);
+}
+
+.featured-experience {
+  grid-column: span 1;
+  background: linear-gradient(180deg, var(--white), #f7f1df);
+}
+
+@media (max-width: 900px) {
+  .experiences-page-header,
+  .experiences-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experiences-page-card img {
+    height: 220px;
+  }
+}

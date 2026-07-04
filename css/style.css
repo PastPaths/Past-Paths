@@ -863,3 +863,93 @@ p { margin: 0 0 var(--space-md); }
   .legal-layout { grid-template-columns:1fr; }
   .legal-summary { position:static; }
 }
+
+/* Site-wide navigation polish */
+.site-header {
+  background: rgba(250, 246, 238, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(48, 78, 56, 0.08);
+  transition: box-shadow .24s ease, background .24s ease, border-color .24s ease, transform .24s ease;
+}
+
+.site-header.is-scrolled,
+.site-header.menu-open {
+  background: rgba(250, 246, 238, 0.96);
+  border-color: rgba(48, 78, 56, 0.12);
+  box-shadow: 0 14px 34px rgba(35, 45, 31, 0.10);
+}
+
+.site-nav a {
+  border-radius: 999px;
+  padding: .55rem .8rem;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.site-nav a::after {
+  display: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: rgba(48, 78, 56, 0.08);
+  transform: translateY(-1px);
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--olive-dark);
+  color: var(--cream);
+  box-shadow: 0 10px 22px rgba(48, 78, 56, 0.16);
+}
+
+.menu-toggle {
+  align-items: center;
+  gap: .55rem;
+  border-radius: 999px;
+  background: rgba(48, 78, 56, 0.08);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: rgba(48, 78, 56, 0.13);
+  transform: translateY(-1px);
+}
+
+body.menu-lock {
+  overflow: hidden;
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+    border-top: 1px solid rgba(48, 78, 56, 0.08);
+    box-shadow: 0 28px 48px rgba(35, 45, 31, 0.13);
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: .85rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-nav,
+  .site-nav a,
+  .menu-toggle {
+    transition: none;
+  }
+}

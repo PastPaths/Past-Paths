@@ -916,3 +916,21 @@ button:focus-visible,
     transform: none !important;
   }
 }
+
+/* Accessibility and performance pass */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+.site-nav a,
+.button,
+.text-link {
+  text-underline-offset: .18em;
+}
+@media (max-width: 640px) {
+  .skip-link:focus {
+    left: .75rem;
+    right: .75rem;
+    width: auto;
+    text-align: center;
+  }
+}

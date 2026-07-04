@@ -863,3 +863,56 @@ p { margin: 0 0 var(--space-md); }
   .legal-layout { grid-template-columns:1fr; }
   .legal-summary { position:static; }
 }
+
+
+/* Site-wide polish: softer reveals, consistent interaction states, reduced-motion support */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card,
+.benefit-card,
+.partner-card,
+.testimonial-card,
+.contact-detail-grid article,
+.process-page-step,
+.legal-card,
+.partners-hero-card {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.card:hover,
+.benefit-card:hover,
+.partner-card:hover,
+.testimonial-card:hover,
+.contact-detail-grid article:hover,
+.process-page-step:hover,
+.legal-card:hover,
+.partners-hero-card:hover {
+  transform: translateY(-4px);
+}
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.text-link:focus-visible {
+  outline: 3px solid rgba(212,170,50,.75);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

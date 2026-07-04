@@ -33,3 +33,23 @@ if ('IntersectionObserver' in window) {
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+
+// Close the mobile menu when a visitor chooses a link or presses Escape.
+if (menuToggle && siteNav && header) {
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+      header.classList.remove('menu-open');
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+      header.classList.remove('menu-open');
+    }
+  });
+}

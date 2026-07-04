@@ -10,6 +10,22 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/burgh-castle-hero.jpg">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-hero{padding-top:calc(var(--space-xl) + 88px);background:linear-gradient(135deg,var(--cream-soft),#fff)}
+    .about-hero-grid{display:grid;grid-template-columns:1fr .9fr;gap:var(--space-xl);align-items:center}
+    .about-hero-media{border-radius:34px;overflow:hidden;box-shadow:0 28px 80px rgba(42,45,25,.16);min-height:440px}
+    .about-hero-media img{width:100%;height:100%;min-height:440px;object-fit:cover;display:block}
+    .about-story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-xl);align-items:start}
+    .about-story-copy p{font-size:1.08rem;color:var(--muted)}
+    .about-values{background:var(--cream-soft)}
+    .about-values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin-top:var(--space-lg)}
+    .about-values-grid article{background:#fff;border:1px solid rgba(70,80,31,.14);border-radius:28px;padding:var(--space-md);box-shadow:0 18px 45px rgba(42,45,25,.08)}
+    .about-values-grid span{display:inline-flex;width:48px;height:48px;align-items:center;justify-content:center;border-radius:50%;background:var(--olive);color:#fff;font-weight:800;margin-bottom:var(--space-sm)}
+    .about-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:var(--space-xl);align-items:center;padding:var(--space-lg);border-radius:34px;background:var(--olive-dark);color:#fff;box-shadow:0 28px 80px rgba(42,45,25,.18)}
+    .about-panel .section-label,.about-panel h2,.about-panel p{color:#fff}.about-panel p{opacity:.88}.about-panel .button-primary{margin-top:var(--space-sm);background:#fff;color:var(--olive-dark)}
+    @media (max-width:900px){.about-hero-grid,.about-story-grid,.about-panel{grid-template-columns:1fr}.about-values-grid{grid-template-columns:1fr}.about-hero-media,.about-hero-media img{min-height:340px}}
+    @media (max-width:620px){.about-hero{padding-top:calc(var(--space-lg) + 72px)}.about-hero-media,.about-hero-media img{min-height:280px}.about-panel{padding:var(--space-md);border-radius:26px}}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -17,7 +33,7 @@
   <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="logo-link" href="index.html" aria-label="Past Paths homepage">
-        <img class="site-logo" src="images/logo.jpg" width="700" height="889" alt="Past Paths - Digital History Experiences" decoding="async">
+        <img class="site-logo" src="images/logo.jpg" alt="Past Paths - Digital History Experiences">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle>☰ Menu</button>
       <nav class="site-nav" id="site-navigation" aria-label="Main navigation" data-site-nav>
@@ -33,20 +49,20 @@
   </header>
 
   <main id="main">
-    <section class="subpage-hero about-hero" aria-labelledby="about-title">
-      <div class="container subpage-hero-grid">
-        <div class="subpage-hero-copy reveal">
+    <section class="section about-hero" aria-labelledby="about-title">
+      <div class="container about-hero-grid">
+        <div class="reveal">
           <p class="eyebrow">About Past Paths</p>
           <h1 id="about-title">Digital history experiences built on research, place and partnership.</h1>
           <p class="lead">Past Paths creates carefully researched digital audio experiences for heritage organisations. Each experience is designed to help visitors understand a site at their own pace, while supporting the organisations that care for historic places.</p>
         </div>
-        <figure class="subpage-hero-media reveal">
-          <img src="images/preston-tower.jpg" width="954" height="821" alt="Preston Tower" loading="eager" decoding="async">
+        <figure class="about-hero-media reveal">
+          <img src="images/preston-tower.jpg" alt="Preston Tower">
         </figure>
       </div>
     </section>
 
-    <section class="section about-story-section" aria-labelledby="story-title">
+    <section class="section" aria-labelledby="story-title">
       <div class="container about-story-grid reveal">
         <div>
           <p class="section-label">What We Do</p>
@@ -59,34 +75,20 @@
       </div>
     </section>
 
-    <section class="section about-values-section" aria-labelledby="values-title">
+    <section class="section about-values" aria-labelledby="values-title">
       <div class="container reveal">
-        <div class="about-values-heading">
-          <p class="section-label">Principles</p>
-          <h2 id="values-title">Every experience is shaped by three principles.</h2>
-        </div>
+        <p class="section-label">Principles</p>
+        <h2 id="values-title">Every experience is shaped by three principles.</h2>
         <div class="about-values-grid">
-          <article>
-            <span>01</span>
-            <h3>Research-led</h3>
-            <p>Each experience begins with historical, architectural and archaeological research, so the finished tour feels grounded and trustworthy.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Visitor-focused</h3>
-            <p>Stories are written for people exploring a real place, with clear pacing, accessible language and a strong sense of atmosphere.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Partner-minded</h3>
-            <p>Experiences are created to complement existing interpretation and support the long-term needs of heritage organisations.</p>
-          </article>
+          <article><span>01</span><h3>Research-led</h3><p>Each experience begins with historical, architectural and archaeological research, so the finished tour feels grounded and trustworthy.</p></article>
+          <article><span>02</span><h3>Visitor-focused</h3><p>Stories are written for people exploring a real place, with clear pacing, accessible language and a strong sense of atmosphere.</p></article>
+          <article><span>03</span><h3>Partner-minded</h3><p>Experiences are created to complement existing interpretation and support the long-term needs of heritage organisations.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section about-founder-section" aria-labelledby="founder-title">
-      <div class="container about-founder-panel reveal">
+    <section class="section" aria-labelledby="founder-title">
+      <div class="container about-panel reveal">
         <div>
           <p class="section-label">Background</p>
           <h2 id="founder-title">A practical way to bring more history to more visitors.</h2>

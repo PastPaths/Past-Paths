@@ -173,3 +173,12 @@ p { margin: 0 0 var(--space-md); }
   .image-break { height:48vh; }
   .section { padding:4.75rem 0; }
 }
+
+.why-section{background:linear-gradient(180deg,var(--cream-soft) 0%,#f8f6ee 100%);}
+.partner-benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem;}
+.benefit-card{background:#fff;border:1px solid rgba(70,80,31,.12);border-radius:18px;padding:2rem;position:relative;box-shadow:0 14px 40px rgba(0,0,0,.05);transition:transform .25s ease,box-shadow .25s ease;}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.08);}
+.benefit-number{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--olive);color:#fff;font-weight:700;margin-bottom:1rem;}
+.benefit-card h3{margin:.2rem 0 .8rem;}
+.benefit-card p{color:var(--muted);margin:0;}
+@media(max-width:640px){.partner-benefits{grid-template-columns:1fr;}}

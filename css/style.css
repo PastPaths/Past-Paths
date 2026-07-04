@@ -934,3 +934,46 @@ img[loading="lazy"] {
     text-align: center;
   }
 }
+
+/* Final global consistency pass */
+:where(.section, .intro-section, .approach-section, .why-section) {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+:where(.button, .text-link, .site-nav a) {
+  -webkit-tap-highlight-color: transparent;
+}
+:where(.button, .card, .benefit-card, .partner-card, .testimonial-card, .process-page-step, .legal-card) {
+  backface-visibility: hidden;
+}
+:where(.button-primary, .button-secondary):active {
+  transform: translateY(0);
+}
+:where(.card, .benefit-card, .partner-card, .testimonial-card, .process-page-step, .legal-card) p:last-child {
+  margin-bottom: 0;
+}
+:where(.hero-media img, .image-break img, .card img, .partner-card img) {
+  image-rendering: auto;
+}
+@media (max-width: 760px) {
+  :root {
+    --space-xl: 3.5rem;
+    --space-xxl: 4.5rem;
+  }
+  .container {
+    width: min(100% - 1.5rem, var(--max-width));
+  }
+  .button {
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .hero-actions,
+  .cta-actions {
+    align-items: stretch;
+  }
+  .hero-actions .button,
+  .cta-actions .button {
+    width: 100%;
+  }
+}

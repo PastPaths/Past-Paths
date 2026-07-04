@@ -977,3 +977,39 @@ img[loading="lazy"] {
 .partner-card-featured .text-link {
   color: var(--cream-soft);
 }
+
+/* Feedback fixes: remove thin decorative line that collided with the Why Partner heading */
+.why-section::before {
+  display: none;
+}
+
+/* Feedback fixes: app store links should use store badge artwork rather than text buttons */
+.store-badge-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.store-badge-link img {
+  display: block;
+  width: min(190px, 42vw);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.store-badge-link:focus-visible {
+  outline: 3px solid rgba(212,170,50,.85);
+  outline-offset: 5px;
+  border-radius: 12px;
+}
+
+/* Feedback fixes: keep the lowfield windmill image from feeling stretched */
+.image-break img[src$="lowfield-windmill-bw.jpg"] {
+  max-height: 760px;
+  object-fit: contain;
+  background: var(--olive);
+}

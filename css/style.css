@@ -281,37 +281,12 @@ p { margin: 0 0 var(--space-md); }
 .partner-card h3 { margin-bottom:0; }
 .partner-card p { color:var(--muted); }
 .experiences-section { background: var(--cream-soft); }
-.experience-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:var(--space-lg);
-  margin-top:var(--space-lg);
-  align-items:stretch;
-}
-.experience-card {
-  background:var(--cream);
-  border:1px solid rgba(70,80,31,.14);
-  display:flex;
-  flex-direction:column;
-  min-height:100%;
-  overflow:hidden;
-}
-.experience-card img {
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
-.experience-card > div {
-  padding:var(--space-md);
-  display:flex;
-  flex-direction:column;
-  flex:1;
-}
+.experience-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-lg); margin-top:var(--space-lg); }
+.experience-card { background:var(--cream); border:1px solid rgba(70,80,31,.14); }
+.experience-card img { aspect-ratio:3/2; width:100%; object-fit:cover; }
+.experience-card div { padding:var(--space-md); }
 .experience-card p { color:var(--gold); text-transform:uppercase; letter-spacing:.14em; font-size:.76rem; font-weight:600; }
 .experience-card span { display:block; color:var(--muted); margin-bottom:var(--space-md); }
-.experience-card .text-link { margin-top:auto; align-self:flex-start; }
 .app-section { background:var(--olive); color:var(--white); }
 .app-section .section-label { color:var(--gold); }
 .app-panel { display:flex; justify-content:space-between; gap:var(--space-lg); align-items:center; }
@@ -380,7 +355,6 @@ p { margin: 0 0 var(--space-md); }
   .split-layout, .app-panel, .approach-panel, .partners-header { grid-template-columns:1fr; display:grid; }
   .approach-intro { position:static; }
   .principle-grid, .experience-grid, .footer-grid, .editorial-points, .partner-showcase { grid-template-columns:1fr 1fr; }
-  .experience-card img { height:280px; }
 }
 
 @media (max-width: 640px) {
@@ -394,7 +368,6 @@ p { margin: 0 0 var(--space-md); }
   .lead { font-size:1.03rem; line-height:1.65; }
   .hero-actions { flex-direction:column; align-items:flex-start; gap:1rem; margin-top:2rem; }
   .principle-grid, .experience-grid, .footer-grid, .editorial-points, .partner-showcase { grid-template-columns:1fr; }
-  .experience-card img { height:260px; }
   .approach-panel { padding:1.25rem; }
   .approach-notes article { grid-template-columns:1fr; }
   .image-break { height:48vh; }
@@ -1004,3 +977,4 @@ img[loading="lazy"] {
 .partner-card-featured .text-link {
   color: var(--cream-soft);
 }
+\n\n/* Cambridgeshire Historic Churches Trust + Cromwell Trail */\n.partner-showcase { grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); }\n.experience-grid { grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); }\n.partner-card-links { display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; }\n.partner-external { font-size:.9rem; opacity:.82; }\n\n.current-partners-page { background:var(--cream-soft); }\n.current-partner-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:var(--space-lg); }\n.current-partner-card { padding:1.5rem; border:1px solid rgba(70,80,31,.18); border-radius:calc(var(--radius) + 10px); background:var(--cream); box-shadow:0 16px 38px rgba(47,54,21,.07); }\n.current-partner-card-featured { grid-column:1 / -1; display:grid; grid-template-columns:minmax(260px,.7fr) 1.3fr; gap:clamp(1.5rem,4vw,4rem); align-items:center; }\n.partner-logo-wide { width:100%; height:auto; max-height:180px; object-fit:contain; background:#fff; padding:1rem; border-radius:var(--radius); }\n.partner-tour-count,.trail-count { color:var(--gold); text-transform:uppercase; letter-spacing:.12em; font-weight:700; font-size:.8rem; }\n\n.partner-detail-hero { background:linear-gradient(180deg,var(--cream-soft),var(--cream)); }\n.partner-detail-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr); gap:clamp(2rem,6vw,6rem); align-items:center; }\n.partner-detail-logo-wrap { background:#fff; padding:clamp(1.2rem,3vw,2.2rem); border-radius:calc(var(--radius) + 12px); box-shadow:0 20px 50px rgba(47,54,21,.1); }\n.partner-detail-logo { width:100%; height:auto; display:block; }\n.partner-trails-section { background:var(--cream-soft); }\n.trail-feature { display:grid; grid-template-columns:minmax(280px,.9fr) 1.1fr; gap:clamp(1.5rem,4vw,4rem); align-items:center; padding:clamp(1rem,2vw,1.5rem); border:1px solid rgba(70,80,31,.16); background:var(--cream); border-radius:calc(var(--radius) + 12px); }\n.trail-feature img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius); }\n\n.trail-hero { background:linear-gradient(180deg,var(--cream-soft),var(--cream)); }\n.trail-hero-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,.95fr); gap:clamp(2rem,5vw,5rem); align-items:center; }\n.trail-hero-image { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:calc(var(--radius) + 12px); box-shadow:0 24px 60px rgba(47,54,21,.14); }\n.trail-churches { background:var(--cream-soft); }\n.trail-section-heading { display:flex; justify-content:space-between; gap:2rem; align-items:end; margin-bottom:var(--space-lg); }\n.trail-section-heading > p { color:var(--muted); }\n.church-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1rem,2.4vw,1.5rem); }\n.church-card { overflow:hidden; border:1px solid rgba(70,80,31,.16); background:var(--cream); border-radius:calc(var(--radius) + 8px); box-shadow:0 14px 34px rgba(47,54,21,.07); }\n.church-card img,.church-image-placeholder { width:100%; aspect-ratio:4/3; object-fit:cover; display:flex; align-items:center; justify-content:center; }\n.church-image-placeholder { flex-direction:column; gap:.55rem; background:linear-gradient(135deg,rgba(70,80,31,.08),rgba(212,170,50,.12)); color:var(--olive); }\n.church-image-placeholder span { font-size:2rem; color:var(--gold); }\n.church-image-placeholder small { font-size:.82rem; text-transform:uppercase; letter-spacing:.12em; }\n.church-card-copy { padding:1.1rem 1.15rem 1.25rem; }\n.church-card-copy h2 { font-size:clamp(1.2rem,2vw,1.55rem); margin:0 0 .4rem; }\n.church-card-copy p { margin:0; color:var(--muted); }\n.experience-list-card-trail { border-color:rgba(212,170,50,.45); }\n\n@media (max-width: 900px) {\n  .partner-detail-grid,.trail-hero-grid,.trail-feature,.current-partner-card-featured { grid-template-columns:1fr; }\n  .church-grid { grid-template-columns:repeat(2,1fr); }\n  .current-partner-grid { grid-template-columns:1fr 1fr; }\n}\n@media (max-width: 640px) {\n  .church-grid,.current-partner-grid { grid-template-columns:1fr; }\n  .trail-section-heading { display:block; }\n}\n

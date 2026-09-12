@@ -1052,3 +1052,22 @@ img[loading="lazy"] {
 .trail-page img[loading="lazy"] {
   content-visibility: visible !important;
 }
+
+/* Remove any outer decorative line from the homepage partnership section. */
+.why-section,
+.why-section::before,
+.why-section::after,
+.why-section > .container,
+.why-section > .container::before,
+.why-section > .container::after {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.why-section::before,
+.why-section::after,
+.why-section > .container::before,
+.why-section > .container::after {
+  content: none !important;
+  display: none !important;
+}

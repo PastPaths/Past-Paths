@@ -1121,3 +1121,17 @@ img[loading="lazy"] {
 /* About page: text-only hero */
 .about-hero-text-only { grid-template-columns: minmax(0, 760px); }
 .about-hero-text-only .hero-copy { max-width: 760px; }
+
+/* About page: centred introduction */
+.about-hero-text-only {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  text-align: center;
+}
+.about-hero-text-only .hero-copy {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.about-hero-text-only .hero-actions {
+  justify-content: center;
+}

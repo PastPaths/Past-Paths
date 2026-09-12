@@ -1043,3 +1043,19 @@ img[loading="lazy"] {
 @media (max-width: 640px) {
   .church-grid { grid-template-columns: 1fr; }
 }
+
+
+/* CHCT visibility hard fix: these pages must never depend on JS/IntersectionObserver. */
+.partner-detail-page .reveal,
+.trail-page .reveal,
+.partner-detail-page section,
+.trail-page section,
+.partner-detail-page .container,
+.trail-page .container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.trail-page img[loading="lazy"] {
+  content-visibility: visible !important;
+}

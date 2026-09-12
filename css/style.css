@@ -173,13 +173,6 @@ p { margin: 0 0 var(--space-md); }
     linear-gradient(135deg, var(--olive-dark), var(--olive));
   color: var(--white);
 }
-.why-section::before {
-  content: "";
-  position: absolute;
-  inset: clamp(1rem, 3vw, 2.5rem);
-  border: 1px solid rgba(212,170,50,.34);
-  pointer-events: none;
-}
 .why-section .container { position: relative; z-index: 1; }
 .why-section h2 { max-width: 760px; color: var(--white); }
 .why-section .section-label { color: var(--gold); }
